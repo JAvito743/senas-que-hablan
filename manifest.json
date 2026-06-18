@@ -1,0 +1,19 @@
+{
+  "name": "Manos que Hablan",
+  "short_name": "Señas Voz",
+  "description": "App básica para traducir gestos de mano a texto y voz sintetizada.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eaf2ff",
+  "theme_color": "#0b5ed7",
+  "icons": [
+    {
+      "src": "icono.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

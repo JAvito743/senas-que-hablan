@@ -1,0 +1,213 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(160deg, #eaf2ff, #f7fbff);
+  color: #16324f;
+}
+
+.oculto { display: none !important; }
+.login-card {
+  max-width: 430px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 12px 34px rgba(22, 50, 79, 0.18);
+  padding: 24px;
+  text-align: center;
+}
+.login-form {
+  text-align: left;
+  margin-top: 18px;
+}
+.login-form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: bold;
+}
+.login-form input {
+  width: 100%;
+  padding: 13px;
+  border: 2px solid #c8d6e5;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+.login-form button {
+  width: 100%;
+  margin-top: 16px;
+}
+.login-mensaje {
+  min-height: 22px;
+  color: #dc3545;
+  font-weight: bold;
+  text-align: center;
+}
+.login-ayuda {
+  background: #eef6ff;
+  color: #244766;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 16px;
+  text-align: left;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(22, 50, 79, 0.10);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+#btnCerrarSesion {
+  background: #dc3545;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px;
+}
+.hero {
+  text-align: center;
+  padding: 14px 0 8px;
+}
+.logo {
+  width: 76px;
+  height: 76px;
+}
+h1 {
+  margin: 6px 0;
+  color: #0b5ed7;
+  font-size: 2rem;
+}
+.hero p { margin-top: 0; }
+.camera-card, .result-card, .help, .record-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(22, 50, 79, 0.13);
+  padding: 14px;
+  margin: 14px 0;
+}
+.camera-card {
+  position: relative;
+  overflow: hidden;
+}
+video, canvas {
+  width: 100%;
+  max-height: 430px;
+  border-radius: 14px;
+  background: #111;
+}
+canvas {
+  display: none;
+}
+.estado {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  right: 24px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(11, 94, 215, 0.88);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+.result-card { text-align: center; }
+.label {
+  margin: 0;
+  color: #60758a;
+  font-size: 0.9rem;
+}
+h2 {
+  margin: 8px 0;
+  font-size: 1.8rem;
+}
+#confianza { margin: 0; }
+.buttons {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+}
+button {
+  border: none;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #0b5ed7;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+button:active { transform: scale(0.98); }
+#btnRepetir { background: #198754; }
+#btnSilencio { background: #6c757d; }
+.help h3 { margin-top: 0; }
+.help ul { padding-left: 22px; }
+.help li { margin: 7px 0; }
+.nota {
+  background: #fff4d6;
+  padding: 10px;
+  border-radius: 10px;
+  color: #6b5300;
+}
+@media (min-width: 650px) {
+  .buttons { grid-template-columns: repeat(3, 1fr); }
+}
+
+.record-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(22, 50, 79, 0.13);
+  padding: 14px;
+  margin: 14px 0;
+}
+.record-card h3 { margin-top: 0; }
+.record-card label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: bold;
+}
+.record-card input {
+  width: 100%;
+  padding: 13px;
+  border: 2px solid #c8d6e5;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+.record-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+#btnCapturar { background: #0d6efd; }
+#btnDescargarDataset { background: #198754; }
+#btnLimpiarDataset { background: #dc3545; }
+.nota-suave {
+  background: #eef6ff;
+  padding: 10px;
+  border-radius: 10px;
+  color: #244766;
+}
+#contadorMuestras {
+  font-weight: bold;
+  text-align: center;
+}
+.preview-muestras {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.preview-muestras img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #dce7f5;
+}
+@media (min-width: 650px) {
+  .record-buttons { grid-template-columns: repeat(3, 1fr); }
+}

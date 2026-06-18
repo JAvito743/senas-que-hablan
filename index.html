@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manos que Hablan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0b5ed7" />
+</head>
+<body>
+  <main class="app">
+    <section id="loginScreen" class="login-card">
+      <img src="icono.svg" alt="Logo Manos que Hablan" class="logo" />
+      <h1>Manos que Hablan</h1>
+      <p>Ingreso al sistema de reconocimiento de señas.</p>
+
+      <form id="loginForm" class="login-form">
+        <label for="usuario">Usuario</label>
+        <input id="usuario" type="text" placeholder="Escribe tu usuario" autocomplete="username" required />
+
+        <label for="clave">Contraseña</label>
+        <input id="clave" type="password" placeholder="Escribe tu contraseña" autocomplete="current-password" required />
+
+        <button type="submit">Entrar a la app</button>
+        <p id="loginMensaje" class="login-mensaje"></p>
+      </form>
+
+      <div class="login-ayuda">
+        <strong>Usuario de prueba:</strong> admin<br />
+        <strong>Contraseña:</strong> admin123
+      </div>
+    </section>
+
+    <section id="appScreen" class="contenido-app oculto">
+      <section class="topbar">
+        <div>
+          <strong>Usuario:</strong> <span id="usuarioActivo">admin</span>
+        </div>
+        <button id="btnCerrarSesion" type="button">Cerrar sesión</button>
+      </section>
+
+      <section class="hero">
+        <img src="icono.svg" alt="Logo Manos que Hablan" class="logo" />
+        <h1>Manos que Hablan</h1>
+        <p>Traductor básico de gestos de mano a texto y voz.</p>
+      </section>
+
+      <section class="camera-card">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="canvas"></canvas>
+        <div id="estado" class="estado">Presiona iniciar cámara</div>
+      </section>
+
+      <section class="result-card">
+        <p class="label">Seña detectada</p>
+        <h2 id="texto">Esperando...</h2>
+        <p id="confianza">Confianza: 0%</p>
+      </section>
+
+      <section class="buttons">
+        <button id="btnIniciar">Iniciar cámara</button>
+        <button id="btnRepetir">Repetir voz</button>
+        <button id="btnSilencio">Pausar voz</button>
+      </section>
+
+      <section class="record-card">
+        <h3>Grabar nuevas señas para entrenar</h3>
+        <p class="nota-suave">Esta función captura fotos de la seña y las organiza en un archivo ZIP. Luego ese ZIP se usa en Google Colab para entrenar un modelo propio.</p>
+
+        <label for="nombreSena">Nombre de la seña</label>
+        <input id="nombreSena" type="text" placeholder="Ejemplo: agua, comer, bano" autocomplete="off" />
+
+        <div class="record-buttons">
+          <button id="btnCapturar" type="button">Capturar muestra</button>
+          <button id="btnDescargarDataset" type="button">Descargar dataset</button>
+          <button id="btnLimpiarDataset" type="button">Limpiar muestras</button>
+        </div>
+
+        <p id="contadorMuestras">Muestras capturadas: 0</p>
+        <div id="previewMuestras" class="preview-muestras"></div>
+      </section>
+
+      <section class="help">
+        <h3>Gestos disponibles</h3>
+        <ul>
+          <li>✋ Palma abierta: “Hola”</li>
+          <li>✊ Puño cerrado: “Necesito ayuda”</li>
+          <li>👍 Pulgar arriba: “Estoy bien”</li>
+          <li>👎 Pulgar abajo: “No estoy bien”</li>
+          <li>☝️ Dedo índice: “Tengo una pregunta”</li>
+          <li>✌️ Victoria: “Gracias”</li>
+          <li>🤟 Te quiero: “Te quiero”</li>
+        </ul>
+        <p class="nota">Esta versión reconoce gestos básicos. Para señas colombianas reales se debe entrenar un modelo propio.</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
